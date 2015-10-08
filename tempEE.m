@@ -29,6 +29,14 @@ for ti = ht:ht:tend
     i = i+1;
 end
 u(1,:) = boundCondLeft(0:ht:tend);
+
+%On fait un joli movie de la temperature :)
+for i=1:length(t)
+    titre = sprintf('Time t=%f',(i-1)*ht);
+    plot(x,u(:,i));axis([0 1 0 1]);title(titre);
+    F(i)=getframe;
+end
+movie(F);
 end
 
 function U = boundCondLeft(t)
