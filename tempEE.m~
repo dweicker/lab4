@@ -1,0 +1,36 @@
+function [u,x,t] = tempEE(Nx,ht,tend)
+%TEMPEE Solve the temperature problem with Euler Explicit 
+% This function solve the problem given in LAB4 with the FDM for the
+% spatial derivatives and with Euler Explicit method for the time
+% derivative
+% INPUT : hx is the spatial stepsize
+%         ht is the time stepsize
+%         tend is the final time  
+% OUTPUT : u is the numerical solution
+%          x is the number of points in the x-axis
+%          t is the discretized t-axis (from 0 to tend)
+
+hx= 1/Nx;
+x = 0:hx:1; %length = Nx+1
+t = 0:ht:tend;
+
+u = zeros(Nx+1,tend/ht+1); %Attention: tend/ht must be an integer
+
+e = ones(Nx,1);
+A = spdiags([e -2*e e],-1:1,Nx,Nx);
+A(Nx,Nx-1) = 2;
+b = sparse(Nx,1);
+
+i = 1;
+for t = ht:ht:tend
+    b(1,1) = boundCondLeft(t);
+    u(2:Nx+1,i+1) = (speye(Nx)+ht/(hx*hx)*A)*u(2:Nx+1)+ht*b; %for now, U0 is on top of the matrix U
+end
+u(1,:) = boundCondLeft(
+
+end
+
+function U = boundCondLeft(t)
+%Returns the boundary condition at the given time
+U = (t<=1);
+end
