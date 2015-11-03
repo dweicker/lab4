@@ -1,1 +1,49 @@
-Ceci est la partie e
+In this section, we will try to improve the efficiency of $ode23s$. Indeed, this method has, at each timestep, to solve a system and uses a Gaussian elimination. However, our system is tridiagonal so this is not optimal. It is in fact possible to "tell" Matlab a bit more about our system so that the resolution will be more efficient. Two ways are used here. 
+
+First, we can tell him which entries of the jacobian are non zeros. It will increase the efficiency because Matlab will know what computations are not necessary (because somothing times zero is always zero). This is done by the $odeset$ property called $JPattern$. We can obtain information by calling the same function as in part d but with a different argument : 
+$$[timeStep,cpuTime,hMax] = tempOde('sparse')$$
+
+Second, we can tell Matlab what is the jacobian of our system. In our case, it is a constant matrix. This will greatly help Matlab in his resolution of the system. To see this, we can call : 
+$$[timeStep,cpuTime,hMax] = tempOde('jacobian')$$
+
+To see the effect of the combined properties, we can call : 
+$$[timeStep,cpuTime,hMax] = tempOde('both')$$
+
+The following table contains the cpu - time for $N=10,20,40$ for different combinations of the $odeset$ properties with the method $ode23s$. The column $'both'$ means that the two properties were set.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\multicolumn{5}{c}{\textbf{CPU - time} $(ode23s)$} \\
+\hline 
+ N& Gaussian & sparse & jacobian & both \\ 
+\hline 
+10 & 0.1944 & 0.1097 & 0.0504 & 0.0560 \\ 
+\hline 
+20 & 0.4108 & 0.1476 & 0.0667 & 0.0697 \\ 
+\hline 
+40 & 0.8883 & 0.1803 & 0.0910 & 0.0992 \\ 
+\hline 
+\end{tabular} 
+\end{center}
+
+We can see that $JPattern$ improves the compution time and $Jacobian$ enven more. Using both $Jacobian$ and $JPattern$ seems to not have a greater effect than using $Jacobian$ alone since the CPU - times are really close. But the computation time can be reduced by a almost a factor 10 for $N=40$.
+
+Finally, we can look at the same table as in part e and see if something other than the cpu - time changes when we set the properties. The following table is obtained when the two properties are set : 
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+  & \textbf{timesteps} & \textbf{cpu - time} & \textbf{h}$_{tmax}$ \\ 
+\hline 
+$N$ & $ode23 \phantom{fedz} ode23s$ & $ode23 \phantom{fedz} ode23s$ & $ode23 \phantom{fedz} ode23s$ \\ 
+\hline 
+10 &345 \phantom{fedzf} 103  & 0.1217 \phantom{fedz}    0.0560 &  0.0169  \phantom{fedz}  0.1473 \\ 
+\hline 
+20 & 1295 \phantom{fedz} 132 & 0.4383  \phantom{fedz}   0.0697 & 0.0043  \phantom{fedz}  0.1563 \\ 
+\hline 
+40 & 5114 \phantom{fedz} 173 &1.8093 \phantom{fedz}   0.0992  & 0.0010  \phantom{fedz}  0.1523 \\ 
+\hline 
+\end{tabular} 
+\end{center}
+
+We can see that, the cpu - time aside, all the factors remain almost the same. For $ode23$, this is because this is an explicit method and so those two properties will have very little influence. \red{On est sur de ca??}

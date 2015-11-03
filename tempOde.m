@@ -9,13 +9,20 @@ hMax = zeros(3,2);
 for i=1:3
     u0 = zeros(N(i),1);
     %We set, if needded, the options for ode23 and ode23s
+    e = ones(N(i),1);
     switch efficiency
         case 'sparse'
-            e = ones(N(i),1);
+            S = spdiags([e e e],-1:1,N(i),N(i));
+            options = odeset('JPattern',S);
+        case 'jacobian'
+            A = spdiags([e -2*e e],-1:1,N(i),N(i));
+            A(N(i),N(i)-1) = 2;
+            options = odeset('Jacobian',N(i)*N(i)*A);
+        case 'both'
             S = spdiags([e e e],-1:1,N(i),N(i));
             A = spdiags([e -2*e e],-1:1,N(i),N(i));
             A(N(i),N(i)-1) = 2;
-            options = odeset('Jacobian',N(i)*N(i)*A,'JPattern',S);
+            options = odeset('JPattern',S,'Jacobian',N(i)*N(i)*A);
         otherwise
             options = [];
     end
