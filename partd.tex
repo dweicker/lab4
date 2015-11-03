@@ -1,3 +1,35 @@
-bla bla bla
+In this section, we will compare two methods for solving the system of differential equations (the one obtained in part 2) : the explicit method $ode23$ and the implicit method $ode23s$. As already said, an implicit method is often more suitable for stiff problems.
 
-Ceci est la partie d
+The two methods will be compared for differents constant stepsizes for the spatial discretization ($N \in [10,20,40]$) and for a determined time interval ($\tau \in [0;2]$). We will based our analysis our three different factors : the number of steps needed to reach $\tau = 2$, the cpu-time needed to do the computations and the maximal value of the stepsize for the time discretization. The default tolerances are used for both methods.
+
+The Matlab code used to do this analysis can be found at the end of this section. As we will reuse this code for part e, this is how the function was called : 
+$$[timeStep,cpuTime,hMax] = tempOde('Gaussian')$$
+
+The returned variables are arrays containing the data. The first column is when $ode23$ is used and the second is for $ode23s$. The lines correspond to the different stepsizes for the spatial discretization.
+
+The call to this function gives the following data : 
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+  & \textbf{timesteps} & \textbf{cpu - time} & \textbf{h}$_{tmax}$ \\ 
+\hline 
+$N$ & $ode23 \phantom{fedz} ode23s$ & $ode23 \phantom{fedz} ode23s$ & $ode23 \phantom{fedz} ode23s$ \\ 
+\hline 
+10 &345 \phantom{fedzf} 104  & 0.1479 \phantom{fedz}    0.1944 &  0.0169  \phantom{fedz}  0.1473 \\ 
+\hline 
+20 & 1295 \phantom{fedz} 132 & 0.4730  \phantom{fedz}  0.4108 & 0.0043  \phantom{fedz}  0.1563 \\ 
+\hline 
+40 & 5114 \phantom{fedz} 169 &1.9056 \phantom{fedz}   0.8883  & 0.0010  \phantom{fedz}  0.1522 \\ 
+\hline 
+\end{tabular} 
+\end{center}
+
+
+We can easily see that, for all the factors taken into account, $ode23s$ is better than its explicit counterpart. 
+
+First, the number of time steps. The explicit method needs much more steps to reach $\tau = 2$, this is because the problem is stiff. We can even compare this number with the theoretical number needed for stability in the case of a constant step size. For $N=10$, the maximal stable stepsize would be $h_t = \frac{(0.1)^2}{2} = 0.005$ so the number of steps to reach $\tau=2$ would be $n = \frac{2}{0.005} = 400$. We can see that $ode23$ is just a little better whereas $ode23s$ divides this number by 4.
+
+Concerning the cpu - time, $ode23s$ is an obvious winner only when $N=40$. For $N=10$, $ode23$ is even a little bit better. This is mainly because the Gaussian elmination of the linear system takes time, but this will be solved in part e.
+
+Finally, the maximal timestep looks approximately constant for $ode23s$. This is not the case for the explicit method. It has to reduce considerably the timestep in order to avoid instability.
