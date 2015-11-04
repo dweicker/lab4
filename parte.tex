@@ -46,4 +46,4 @@ $N$ & $ode23 \phantom{fedz} ode23s$ & $ode23 \phantom{fedz} ode23s$ & $ode23 \ph
 \end{tabular} 
 \end{center}
 
-We can see that, the cpu - time aside, all the factors remain almost the same. For $ode23$, this is because this is an explicit method and so those two properties will have very little influence. \red{On est sur de ca??}
+We can see that, the cpu - time aside, all the factors remain almost the same. For $ode23$, this is because this is an explicit method and so those two properties will have little influence. Indeed, in an explicit method, no system has to be solved. Instead, a matrix multiplication is used. The resolution will thus be a little bit faster because the jacobian is constant but the gain will not be as large as for an implicit method. 
