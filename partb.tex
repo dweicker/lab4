@@ -1,0 +1,23 @@
+Points go from $\xi_{0}$ to $\xi_m$ and there is a ghost point at $\xi_{m+1}$.
+
+$$\dfrac{du}{dt}= \dfrac{U_{i+1}-2U_{i}+U_{i-1}}{h^2} \text{ for } i= 1, .., N.$$
+
+and the right boundary condition is $\dfrac{\partial u}{\partial \xi}=0$. We approximate with $(U_{m+1}-U_{m})/2h^2 = 0$ or $U_{m+1}=U_{m}$.
+
+
+
+$$\dfrac{du}{dt}= \dfrac{1}{h^2}
+\begin{pmatrix}
+-2  & 1 &        &         &  & \\
+1 & -2 & 1 &         &  & \\
+       & 1 & \ddots & \ddots  &  & \\
+       &        & \ddots &         &   &    \\
+	   &        &        & 1 & -2 & 1\\
+	   &			&		&		  & 2 & -2
+\end{pmatrix}U + \dfrac{1}{h^2}\begin{pmatrix}
+x\\
+0\\
+\vdots \\
+0
+\end{pmatrix}$$
+
