@@ -2,13 +2,25 @@
 We apply the change of variable $T=T_{0}u$, $x=L\xi$ and $t=t_{p}\tau$. This gives 
 $$\dfrac{\partial T}{\partial t } = \dfrac{\partial T}{\partial \tau }\dfrac{\partial \tau}{\partial t }= \dfrac{T_0}{t_p}\dfrac{\partial u}{\partial \tau },$$
 and similarly 
-$$\dfrac{\partial^2 T}{\partial x^2} =  \dfrac{T_0}{L^2} \dfrac{\partial^2 T}{\partial \xi^2}.$$
-
-So the equations becomes 
+$$\dfrac{\partial T}{\partial x}=\dfrac{\partial T}{\partial \xi}\dfrac{\partial \xi}{\partial x}=\dfrac{T_0}{L}\dfrac{\partial u}{\partial \xi}.$$
+So we find
+$$
+\dfrac{\partial^2 T}{\partial x^2} = \dfrac{\partial }{\partial x}\Big(\dfrac{\partial T}{\partial x}\Big)
+= \dfrac{\partial }{\partial x}\Big(\dfrac{T_0}{L}\dfrac{\partial u}{\partial \xi}\Big)
+=\dfrac{\partial }{\partial \xi}\Big(\dfrac{T_0}{L}\dfrac{\partial u}{\partial \xi}\Big)\dfrac{\partial \xi}{\partial x}
+=\dfrac{T_0}{L^2} \dfrac{\partial^2 u}{\partial \xi^2}.$$
+The equations then becomes 
 $$\rho C_p \dfrac{T_0}{t_p}\dfrac{\partial u}{\partial \tau } = k \dfrac{T_0}{L^2} \dfrac{\partial^2 u}{\partial \xi^2 }.$$
-Writing 
-$$ \dfrac{\partial u}{\partial \tau } =  \dfrac{k}{rho C_p L^2} \dfrac{\partial^2 u}{\partial \xi^2 }.$$
-We have $a=\dfrac{t_p k}{\rho C_p L^2}$ and we check that it has no dimension, $\dfrac{s \cdot J/(m \cdot s \cdot C) }{kg/m^3 \cdot J/(kg \cdot C) \cdot m^2}$.
+The boundary conditions on $u$ are clearly what we want using the definition of the change of variable.
+$$u(0,\tau) = \left\{ \begin{array}{ll}
+1, & 0\leq \tau \leq 1 \\
+0, & \tau > 1.
+\end{array}\right.$$ ensures that $u(0,\tau)=1$ for $0\leq \tau \leq 1$ which is gives $T(0,t)=T_0$ for the range $0\leq t \leq t_p$. We also have $T(0,t)=0$ for $t>t_p$.
+The right condition $\dfrac{\partial u}{\partial \xi }(1,\tau)=0$ gives $\dfrac{L}{T_0}\dfrac{\partial T}{\partial x }(L,t)=0$. Finally the initial condition $u(\xi,0)=0$ for $0<\xi \leq 1$ is equivalent to $T(x,0)=0$ for $0<x\leq L$.\newline
+For the last part of the question, writing 
+$$ \dfrac{\partial u}{\partial \tau } = \underbrace{\dfrac{t_p k}{\rho C_p L^2}}_{a} \dfrac{\partial^2 u}{\partial \xi^2 }.$$
+We have $a=\dfrac{t_p k}{\rho C_p L^2}$ and we check that it has no dimension. Indeed,  $$\dfrac{s \cdot J/(m \cdot s \cdot C) }{kg/m^3 \cdot J/(kg \cdot C) \cdot m^2}=
+\dfrac{s \cdot J \cdot m^3 \cdot kg \cdot C}{m \cdot s \cdot C \cdot kg \cdot J \cdot m^2} $$ which simplifies.
 
 
 

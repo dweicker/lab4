@@ -1,12 +1,16 @@
-Points go from $\xi_{0}$ to $\xi_m$ and there is a ghost point at $\xi_{m+1}$.
+Points go from $\xi_{0}=0$ to $\xi_N=1$ and there is a ghost point at $\xi_{N+1}$. The boundary condition gives the value of $U_0$ for all $\tau$ and this does not need to be an unknown of the problem we solve. The right boundary condition is $\dfrac{\partial u}{\partial \xi}=0$. We approximate with $(U_{N+1}-U_{N-1})/2h = 0$ or $U_{N+1}=U_{N-1}$. And this allows to get rid of $U_{N+1}$ and work with $U_{1}, .., U_{N}$ as the $N$ unknowns.
 
-$$\dfrac{du}{dt}= \dfrac{U_{i+1}-2U_{i}+U_{i-1}}{h^2} \text{ for } i= 1, .., N.$$
+The equation itself is discretized to
 
-and the right boundary condition is $\dfrac{\partial u}{\partial \xi}=0$. We approximate with $(U_{m+1}-U_{m})/2h^2 = 0$ or $U_{m+1}=U_{m}$.
+$$\dfrac{du}{dt}(1)= \dfrac{U_{2}-2U_{1}+u(0,\tau)}{h^2}$$
+
+$$\dfrac{du}{dt}(2:end-1)= \dfrac{U_{i+1}-2U_{i}+U_{i-1}}{h^2} \text{ for } i= 2, .., N-1.$$
+$$\dfrac{du}{dt}(end)= \dfrac{2U_{N-1}-2U_{N}}{h^2} \text{ using } U_{N+1}=U_{N-1}.$$
 
 
 
 $$\dfrac{du}{dt}= \dfrac{1}{h^2}
+\underbrace{
 \begin{pmatrix}
 -2  & 1 &        &         &  & \\
 1 & -2 & 1 &         &  & \\
@@ -14,10 +18,12 @@ $$\dfrac{du}{dt}= \dfrac{1}{h^2}
        &        & \ddots &         &   &    \\
 	   &        &        & 1 & -2 & 1\\
 	   &			&		&		  & 2 & -2
-\end{pmatrix}U + \dfrac{1}{h^2}\begin{pmatrix}
-x\\
+\end{pmatrix}}_{A}U + \dfrac{1}{h^2} \underbrace{\begin{pmatrix}
+u(0,\tau)\\
 0\\
 \vdots \\
 0
-\end{pmatrix}$$
+\end{pmatrix}}_{b(\tau)}$$
+
+Matrix $A\in \R^{N\times N}$ and vector $b(\tau)\in \R^{N}$ as explained.
 

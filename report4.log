@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.11.17)  5 NOV 2015 21:33
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.11.17)  6 NOV 2015 12:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1192,11 +1192,7 @@ Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
-) (./report4.aux
-
-LaTeX Warning: Label `' multiply defined.
-
-)
+) (./report4.aux)
 \openout1 = `report4.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 87.
@@ -1213,7 +1209,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 87.
 LaTeX Font Info:    ... okay on input line 87.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 87.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 87.
- (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 87.
@@ -1304,30 +1300,34 @@ LaTeX Font Info:    Try loading font information for U+rsfs on input line 91.
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) (./parta.tex
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 11.
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 22.
 
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)) (./partb.tex) (./partc.tex
+)) (./partb.tex [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./partc.tex
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 6.
+
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
 Package epstopdf Info: Source file: <./stable.eps>
 (epstopdf)                    date: 2015-11-05 21:31:44
 (epstopdf)                    size: 1707691 bytes
 (epstopdf)             Output file: <./stable-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-11-05 21:33:07
+(epstopdf)                    size: 142434 bytes
 (epstopdf)             Command: <repstopdf --outfile=./stable-eps-converted-to.
 pdf ./stable.eps>
-(epstopdf)             \includegraphics on input line 5.
-runsystem(repstopdf --outfile=./stable-eps-converted-to.pdf ./stable.eps)...exe
-cuted safely (allowed).
+(epstopdf)             \includegraphics on input line 14.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <./stable-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-11-05 21:33:07
-(epstopdf)                    size: 142434 bytes.
-
-<./stable-eps-converted-to.pdf, id=7, 433.62pt x 321.2pt>
+<./stable-eps-converted-to.pdf, id=28, 433.62pt x 321.2pt>
 File: ./stable-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./stable-eps-converted-to.pdf>
-Package pdftex.def Info: ./stable-eps-converted-to.pdf used on input line 5.
+Package pdftex.def Info: ./stable-eps-converted-to.pdf used on input line 14.
 (pdftex.def)             Requested size: 317.07614pt x 234.88084pt.
 
 
@@ -1337,69 +1337,61 @@ Package epstopdf Info: Source file: <./unstable.eps>
 (epstopdf)                    date: 2015-11-05 21:31:44
 (epstopdf)                    size: 1624011 bytes
 (epstopdf)             Output file: <./unstable-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-11-05 21:33:09
+(epstopdf)                    size: 120670 bytes
 (epstopdf)             Command: <repstopdf --outfile=./unstable-eps-converted-t
 o.pdf ./unstable.eps>
-(epstopdf)             \includegraphics on input line 12.
-runsystem(repstopdf --outfile=./unstable-eps-converted-to.pdf ./unstable.eps)..
-.executed safely (allowed).
-
-Package epstopdf Info: Result file: <./unstable-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-11-05 21:33:09
-(epstopdf)                    size: 120670 bytes.
-<./unstable-eps-converted-to.pdf, id=8, 433.62pt x 321.2pt>
+(epstopdf)             \includegraphics on input line 21.
+Package epstopdf Info: Output file is already uptodate.
+<./unstable-eps-converted-to.pdf, id=29, 433.62pt x 321.2pt>
 File: ./unstable-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./unstable-eps-converted-to.pdf>
-Package pdftex.def Info: ./unstable-eps-converted-to.pdf used on input line 12.
+Package pdftex.def Info: ./unstable-eps-converted-to.pdf used on input line 21.
 
 (pdftex.def)             Requested size: 317.07614pt x 234.88084pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) (./partd.tex [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2pdfTeX warning (ext4): d
-estination with the same identifier (name{figure.0.1}) has been already used, d
-uplicate ignored
+[2]) (./partd.tex [3pdfTeX warning (ext4): destination with the same identifier
+ (name{figure.0.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.4 
-    pdfTeX warning (ext4): destination with the same identifier (name{figure.0.
-2}) has been already used, duplicate ignored
+l.5 T
+     he Matlab code used to do this analysis can be found at the end of this...
+pdfTeX warning (ext4): destination with the same identifier (name{figure.0.2}) 
+has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.4 
-     <./stable-eps-converted-to.pdf> <./unstable-eps-converted-to.pdf>])
-(./parte.tex [3]) (./partf.tex)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 132.
- [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 132.
+l.5 T
+     he Matlab code used to do this analysis can be found at the end of this...
+ <./stable-eps-converted-to.pdf> <./unstable-eps-converted-to.pdf>])
+(./parte.tex [4]) (./partf.tex)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 131.
+ [5]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 131.
  (./report4.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 132.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 132.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 131.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 131.
 Package rerunfilecheck Info: File `report4.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 132.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 131.
  ) 
 Here is how much of TeX's memory you used:
- 19819 strings out of 493304
- 331761 string characters out of 6139870
+ 19865 strings out of 493304
+ 332449 string characters out of 6139870
  456072 words of memory out of 5000000
- 22779 multiletter control sequences out of 15000+600000
- 45427 words of font info for 48 fonts, out of 8000000 for 9000
+ 22820 multiletter control sequences out of 15000+600000
+ 45746 words of font info for 49 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 56i,11n,72p,536b,341s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,16n,72p,536b,388s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
-ips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share
-/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
--ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/f
+ips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share
+/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ma
+thex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/f
 onts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.
 pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts
 /type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb>
@@ -1407,11 +1399,13 @@ pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts
 /public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/sh
 are/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf
-/fonts/type1/public/lm/lmsy8.pfb>
-Output written on report4.pdf (4 pages, 457841 bytes).
+/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.
+pfb>
+Output written on report4.pdf (5 pages, 489246 bytes).
 PDF statistics:
- 112 PDF objects out of 1000 (max. 8388607)
- 89 compressed objects within 1 object stream
- 14 named destinations out of 1000 (max. 500000)
+ 126 PDF objects out of 1000 (max. 8388607)
+ 100 compressed objects within 1 object stream
+ 15 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
