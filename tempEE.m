@@ -9,7 +9,7 @@ function [u,x,t] = tempEE(Nx,ht,tend)
 % OUTPUT : u is the numerical solution
 %          x is the number of points in the x-axis
 %          t is the discretized t-axis (from 0 to tend)
-close all;
+
 hx= 1/Nx;
 coeff = ht/(hx*hx);
 x = 0:hx:1; %length = Nx+1
@@ -40,11 +40,6 @@ u(1,:) = boundCondLeft(0:ht:tend);
 % end
 % movie(F);
 
-figure()
-surf(t,x,u)
-xlabel('Time [s]');
-ylabel('Length [m]');
-zlabel('Temperature [C]');
 u = flipud(u);
 end
 
