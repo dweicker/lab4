@@ -5,21 +5,42 @@ U^{k+1} &= U^{k} + \Delta t\Big(\dfrac{1}{h^2}AU^{k}+\dfrac{1}{h^2}b(\tau)\Big)\
 \end{align*}
 The code is available below in \ttt{tempEE.m}.
 
-We present a stable and an unstable solution on the figures~\ref{fig:stable}\ref{fig:unstable}.
+We cannot choose $\Delta x$ and $\Delta t$ as we want to obtain a stable solution.The following tests have been made :
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+$\Delta x$ & $\Delta t$ &$\frac{\Delta t}{\Delta x^2}$ &\textbf{Stability} \\ 
+\hline 
+0.05 & 0.01 &4 &Unstable \\ 
+\hline 
+ 0.1& 0.001 & 0.1 &Stable \\ 
+\hline 
+0.1 & 0.005 & 0.5 &Stable \\ 
+\hline 
+0.1 &0.0051 &0.51 &Unstable\\
+\hline
+\end{tabular} 
+\end{center}
+
+It is possible to show that, in order to have a stable solution, the following condition must be satisfied : $\frac{\Delta t}{\Delta x^2} \leq \frac{1}{2}$.
+
+We present a stable and an unstable solution on the figures~\ref{fig:stable},\ref{fig:unstable}.
 They were obtained respectively with the calls \ttt{tempEE(10,0.005,2)} and \ttt{tempEE(10,0.0051,2)}. This corresponds to $\Delta x = 0.1$ and $\Delta t = \{0.005, 0.0051 \}$. This gives $\dfrac{\Delta t}{\Delta x^2}= \{0.5,0.51\}$. The unstable case breaks the condition $\dfrac{\Delta t}{\Delta x^2}\leq \dfrac{1}{2}$.
 
+We can clearly see that the solution presented in figure \ref{fig:unstable} is unstable. Indeed, it shows large oscillations and even negative temperatures (which is not possible since the rod is heated).
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width = 0.7\textwidth]{./stable.eps}
-\caption{Stable solution: }
+\caption{Stable solution }
 \label{fig:stable}
 \end{figure}
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width = 0.7\textwidth]{./unstable.eps}
-\caption{Unstable solution: }
+\caption{Unstable solution }
 \label{fig:unstable}
 \end{figure}
 \FloatBarrier

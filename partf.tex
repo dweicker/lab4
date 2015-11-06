@@ -1,4 +1,4 @@
-This section is about the visualization of the results. Figure \ref{four} shows the temperature in the rod at four time points (namely $\tau \approx 0.5,1,1.5,2$).
+This section is about the visualization of the results. The Matlab code can be found at the end of the report. Figure \ref{four} shows the temperature in the rod at four time points (namely $\tau \approx 0.5,1,1.5,2$).
 
 \begin{figure}
 \begin{center}
@@ -24,3 +24,8 @@ The next plot is the same as the stable one in section c). It is shown in figure
 This report presented the solution of the very practical problem : the evolution of the temperature in a rod. This can be modelled as a parabolic PDE. To solve this PDE, we used the finite difference method to arrive at a system of ODEs. This system of ODE is stiff and a stiff method should then be used to solve it efficiently.
 
 The stucture of the jacobian of the ODE system is really particular : it is tridiagonal (thus banded). This particularity should be taken into account when using the stiff solver (as did in section e) of the report).
+
+\section*{MATLAB}
+\lstinputlisting{graphics.m}
+\lstinputlisting{tempEE.m}
+\lstinputlisting{tempODE.m}
