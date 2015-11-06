@@ -40,9 +40,6 @@ u(1,:) = boundCondLeft(0:ht:tend);
 % end
 % movie(F);
 
-figure()
-surf(t,x,u)
-
 
 u = flipud(u);
 end
